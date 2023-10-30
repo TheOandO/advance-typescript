@@ -1,5 +1,6 @@
 import User, { User as UserType } from '../models/users.model';
 import Blog, { Blog as BlogType } from '../models/blogs.model';
+import bcrypt from 'bcrypt'
 
 class UserService {
     async createUser(users: UserType): Promise<UserType> {
@@ -14,7 +15,12 @@ class UserService {
     async getUserById(userId: string): Promise<UserType | null> {
         return User.findById(userId);
     };
+
     async updateUser(userId: string, user: UserType): Promise<UserType | null> {
+        if (user.password) {
+            const saltRounds = 10;
+            user.password = await bcrypt.hash(user.password, saltRounds);
+        }      
         return User.findByIdAndUpdate(userId, user, { new: true });
     }
     
