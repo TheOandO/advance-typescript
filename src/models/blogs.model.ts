@@ -4,7 +4,7 @@ import { BLOG_MODEL } from "../utils/constants/modelNames";
 export interface Blog extends Document {
     title: string,
     content: string,
-    date: Date
+    createdAt?: Date
 };
 
 const BlogSchema = new mongoose.Schema (

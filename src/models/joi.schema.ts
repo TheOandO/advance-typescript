@@ -9,6 +9,6 @@ export const userValidationSchema = Joi.object({
 export const blogValidationSchema = Joi.object ({
     title: Joi.string().max(150).label('title'),
     content: Joi.string().max(1000).label('content'),
-    date: Joi.date().label('time')
+    createdAt: Joi.date().label('date')
 })
 
