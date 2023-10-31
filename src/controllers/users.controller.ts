@@ -94,7 +94,7 @@ class UserController {
             if (!user) {
                 return ResponseUtil.error(res, 'User not found', 404);
             }
-            
+
             ResponseUtil.success(res, 'User deleted successfully');
         } catch (error) {
             ResponseUtil.error(res, 'Delete failed', 500);

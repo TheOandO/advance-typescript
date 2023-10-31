@@ -1,6 +1,7 @@
 import express from 'express';
 import userRoute from './users.route';
 import blogRoute from './blogs.route';
+import authRoute from './auth.route';
 const router = express.Router();
 
 const defaultRoutes = [
@@ -11,6 +12,10 @@ const defaultRoutes = [
     {
         path: '/blogs',
         route: blogRoute,
+    },
+    {
+        path: '/',
+        route: authRoute,
     }
 ];
 

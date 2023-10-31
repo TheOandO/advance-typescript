@@ -27,6 +27,10 @@ class UserService {
     async deleteUser(userId: string): Promise<UserType | null> {
         return User.findByIdAndDelete(userId);
     }
+    
+    async getUserByUsername(username: string): Promise<UserType | null> {
+        return User.findOne({ username });
+    }; 
 }
 
 class BlogService {
