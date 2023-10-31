@@ -6,9 +6,9 @@ import { catchAsync } from "../utils/catchAsync";
 class AuthController {
     /**
      * Login Authenticator
-     * @param req 
-     * @param res 
-     * @returns void
+     * @param {Request} req 
+     * @param {Response}res 
+     * @returns {void}
      */
     login = catchAsync(async (req: Request, res: Response) => {
         try {
