@@ -23,17 +23,4 @@ class JwtService {
     }
 };
 
-// export const generateToken = (payload: any) => {
-//     return jwt.sign(payload, JWT_SECRET!, { expiresIn: '1h'});
-// };
-
-// export const verifyToken = (token: string): string | object => {
-//     try {
-//         const decoded = jwt.verify(token, JWT_SECRET!);
-//         return decoded;
-//     } catch (error) {
-//         return '';
-//     }
-// };
-
 export default new JwtService()

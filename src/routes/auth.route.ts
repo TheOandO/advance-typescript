@@ -7,6 +7,7 @@ const router = Express.Router();
 router
     .get('/login', AuthController.login)
     .get('/profile', authToken, (req, res) => {
-        res.json({ message: 'It was a question of which of the two she preferred. On the one hand, the choice seemed simple. The more expensive one with a brand name would be the choice of most. It was the easy choice. The safe choice. But she wasn`t sure she actually preferred it.'})
+        res.json({ message: 'Authorized: \n \
+                It was a question of which of the two she preferred. On the one hand, the choice seemed simple. The more expensive one with a brand name would be the choice of most. It was the easy choice. The safe choice. But she wasn`t sure she actually preferred it.'})
     });
 export default router;

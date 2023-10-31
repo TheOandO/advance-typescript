@@ -6,7 +6,7 @@ import { authToken } from "../middlewares/auth.middle";
 const router = Express.Router()
 
 router
-    .get('/', authToken, UserController.getAllUsers)
+    .get('/', UserController.getAllUsers)
     .post('/',validateUser, authToken, UserController.createUser)
     .get('/:userId',validateUser,authToken, UserController.getUserById)
     .put('/:userId',validateUser,authToken, UserController.updateUser)
