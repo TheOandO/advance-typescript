@@ -1,11 +1,10 @@
-import mongoose, { Schema, Document, Date} from "mongoose";
-import { BLOG_MODEL } from "../utils/constants/modelNames";
+import mongoose, { Document } from "mongoose";
+import { ModelNames } from "../utils/constants/modelNames";
 
 export interface Blog extends Document {
     title: string,
     content: string,
-    createdAt?: Date
-};
+}
 
 const BlogSchema = new mongoose.Schema (
     {
@@ -21,4 +20,4 @@ const BlogSchema = new mongoose.Schema (
     }
 );
 
-export default mongoose.model<Blog>(BLOG_MODEL, BlogSchema);
+export default mongoose.model<Blog>(ModelNames.BLOG_MODEL, BlogSchema);

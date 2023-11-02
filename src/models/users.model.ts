@@ -1,12 +1,12 @@
-import mongoose, { Schema, Document } from "mongoose";
-import { USER_MODEL } from "../utils/constants/modelNames";
+import mongoose, { Document } from "mongoose";
+import { ModelNames } from "../utils/constants/modelNames";
 import bcrypt from "bcrypt";
 
 export interface User extends Document {
     username: string;
     password: string;
     email: string;
-};
+}
 
 const UserSchema = new mongoose.Schema(
     {
@@ -46,4 +46,4 @@ UserSchema.pre<User>('save', async function (next) {
     }
 });
 
-export default mongoose.model<User>(USER_MODEL, UserSchema);
+export default mongoose.model<User>(ModelNames.USER_MODEL, UserSchema);

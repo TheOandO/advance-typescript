@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 
 /**
  * Global handling error
- * @param {*} fn 
+ * @param {function} fn 
  * @returns {void}
  */
 export const catchAsync = <T = Response>(fn: (req: Request, res: Response, next: NextFunction) => Promise<T>) =>

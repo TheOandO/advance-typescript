@@ -4,12 +4,6 @@ import ResponseUtil from "../utils/res.utils";
 import { catchAsync } from "../utils/catchAsync";
 
 class AuthController {
-    /**
-     * Login Authenticator
-     * @param {Request} req 
-     * @param {Response}res 
-     * @returns {void}
-     */
     login = catchAsync(async (req: Request, res: Response) => {
         try {
             const { username, password } = req.body;
@@ -22,6 +16,6 @@ class AuthController {
             Reasons: ' + error, 500);
         }
     });
-};
+}
 
 export default new AuthController()

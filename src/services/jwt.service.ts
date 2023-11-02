@@ -8,7 +8,7 @@ class JwtService {
 
     constructor() {
         this.secretKey = process.env.JWT_SECRET || 'defaultSecretKey';
-    };
+    }
 
     /**
      * Generate JWT
@@ -17,12 +17,12 @@ class JwtService {
      */
     generateToken(userId: string) {
         return jwt.sign({ userId }, this.secretKey, { expiresIn: '1h' });
-    };
+    }
     
     /**
      * Verify JWT
      * @param {Object} token 
-     * @returns jwt
+     * @returns {Object} jwt
      */
     verifyToken(token: string) {
         try {
@@ -31,6 +31,6 @@ class JwtService {
             return null;
         }
     }
-};
+}
 
 export default new JwtService()

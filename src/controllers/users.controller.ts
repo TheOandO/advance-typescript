@@ -4,12 +4,6 @@ import ResponseUtil from "../utils/res.utils";
 import { catchAsync } from "../utils/catchAsync";
 
 class UserController {
-    /**
-     * Get all users
-     * @param {Request} req 
-     * @param {Response} res 
-     * @returns {Object} user
-     */
     createUser = catchAsync(async(req: Request, res: Response) => {
         try {
             const userService = new Service.UserService();
@@ -21,12 +15,6 @@ class UserController {
         }
     });
 
-    /**
-     *  Create a user
-     * @param {Request} req 
-     * @param {Response} res 
-     * @returns {Object} users
-     */
     getAllUsers = catchAsync(async(req: Request, res: Response) => {
         try {
             const userService = new Service.UserService();
@@ -38,12 +26,6 @@ class UserController {
         }
     });
 
-    /**
-     * Get a user by ID
-     * @param {Request} req 
-     * @param {Response} res 
-     * @returns {Object} user
-     */
     getUserById = catchAsync(async (req: Request, res: Response) => {
         try {
             const userService = new Service.UserService();
@@ -59,12 +41,6 @@ class UserController {
         }
     });
 
-    /**
-     * Update a user
-     * @param {Request} req 
-     * @param {Response} res 
-     * @returns {Object} updatedUser
-     */
     updateUser = catchAsync(async (req: Request, res: Response) => {
         try {
             const userService = new Service.UserService();
@@ -80,12 +56,6 @@ class UserController {
         }
     });
     
-    /**
-     * Delete a user
-     * @param {Request} req 
-     * @param {Response} res 
-     * @returns {void}
-     */
     deleteUser = catchAsync(async (req: Request, res: Response) => {
         try {
             const userService = new Service.UserService();

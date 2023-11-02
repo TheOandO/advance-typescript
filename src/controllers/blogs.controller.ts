@@ -4,12 +4,6 @@ import ResponseUtil from "../utils/res.utils";
 import { catchAsync } from "../utils/catchAsync";
 
 class BlogController {
-    /**
-     * Get all blogs
-     * @param {Request} req 
-     * @param {Response} res 
-     * @returns {Object} blog
-     */
     createBlog = catchAsync(async(req: Request, res: Response) => {
         try {
             const blogService = new Service.BlogService();
@@ -21,12 +15,6 @@ class BlogController {
         }
     });
 
-    /**
-     *  Create a blog
-     * @param {Request} req 
-     * @param {Response} res 
-     * @returns {Object} blogs
-     */
     getAllBlogs = catchAsync(async(req: Request, res: Response) => {
         try {
             const blogService = new Service.BlogService();
@@ -38,12 +26,6 @@ class BlogController {
         }
     });
 
-    /**
-     * Get a blog by ID
-     * @param {Request} req 
-     * @param {Response} res 
-     * @returns {Object} blog
-     */
     getBlogById = catchAsync(async (req: Request, res: Response) => {
         try {
             const blogService = new Service.BlogService();
@@ -59,12 +41,6 @@ class BlogController {
         }
     });
 
-    /**
-     * Update a blog
-     * @param {Request} req 
-     * @param {Response} res 
-     * @returns {Object} updatedBlog
-     */
     updateBlog = catchAsync(async (req: Request, res: Response) => {
         try {
             const blogService = new Service.BlogService();
@@ -80,12 +56,6 @@ class BlogController {
         }
     });
     
-    /**
-     * Delete a blog
-     * @param {Request} req 
-     * @param {Response} res 
-     * @returns {void}
-     */
     deleteBlog = catchAsync(async (req: Request, res: Response) => {
         try {
             const blogService = new Service.BlogService();

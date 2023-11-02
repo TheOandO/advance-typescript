@@ -1,2 +1,4 @@
-export const USER_MODEL = 'users';
-export const BLOG_MODEL = 'blogs';
+export const ModelNames = {
+    USER_MODEL: 'users',
+    BLOG_MODEL: 'blogs',
+}

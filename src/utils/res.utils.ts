@@ -1,7 +1,7 @@
 import { Response } from 'express';
 
 class ResponseUtil {
-    success(res: Response, data: any) {
+    success(res: Response, data: unknown) {
     return res.status(200).json(data);
     }
 

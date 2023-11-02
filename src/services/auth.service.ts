@@ -6,19 +6,19 @@ class AuthService {
     /**
      * Get User by Username
      * @param {Object} username 
-     * @returns {Object} user
+     * @returns {Promise<Object>} user
      */
     async getUserByUsername(username: string): Promise<UserType | null> {
         const user = await User.findOne({ username });
         console.log('Found user:', user);
         return user;    
-    }; 
+    }
 
     /**
      * Login function
      * @param {Object} username 
      * @param {Object} password 
-     * @returns {Object} user, token
+     * @returns {Promise<Object>} user, token
      */
     async login(username: string, password: string) {
         try {
