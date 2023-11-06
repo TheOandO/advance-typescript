@@ -52,6 +52,15 @@ class UserService {
     async deleteUser(userId: string): Promise<UserType | null> {
         return await User.findByIdAndDelete(userId);
     }
+
+    /**
+     * Get User by Username
+     * @param {Object} username 
+     * @returns {Promise<Object>} user
+     */
+    async getUserByUsername(username: string): Promise<UserType | null> {
+        return User.findOne({ username });
+    }
 }
 
 class BlogService {

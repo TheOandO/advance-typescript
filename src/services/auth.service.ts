@@ -1,18 +1,8 @@
 import jwtService from "./jwt.service";
 import bcrypt from 'bcrypt'
-import User, {User as UserType} from '../models/users.model';
+import uService from './models.service'
 
 class AuthService {
-    /**
-     * Get User by Username
-     * @param {Object} username 
-     * @returns {Promise<Object>} user
-     */
-    async getUserByUsername(username: string): Promise<UserType | null> {
-        const user = await User.findOne({ username });
-        console.log('Found user:', user);
-        return user;    
-    }
 
     /**
      * Login function
@@ -22,7 +12,8 @@ class AuthService {
      */
     async login(username: string, password: string) {
         try {
-            const user = await this.getUserByUsername(username);
+            const login = new uService.UserService();
+            const user = await login.getUserByUsername(username);
 
             if (!user) {
                 return {error: 'User not found'};
