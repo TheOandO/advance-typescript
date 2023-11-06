@@ -1,0 +1,6 @@
+
+//mongodb
+//MONGODB_URL='mongodb+srv://localhost:27017/'
+
+//jwt
+//JWT_SECRET=key
