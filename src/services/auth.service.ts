@@ -3,7 +3,6 @@ import bcrypt from 'bcrypt'
 import uService from './models.service'
 
 class AuthService {
-
     /**
      * Login function
      * @param {Object} username 
