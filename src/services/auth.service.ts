@@ -9,7 +9,7 @@ class AuthService {
      * @param {Object} password 
      * @returns {Promise<Object>} user, token
      */
-    async login(username: string, password: string) {
+    async login(username: string, password: string): Promise<object> {
         try {
             const login = new uService.UserService();
             const user = await login.getUserByUsername(username);
